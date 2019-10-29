@@ -34,6 +34,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"runtime/debug"
 	"strings"
 	"sync"
 )
@@ -216,6 +217,9 @@ func (logger *LevelLogger) Errorf(format string, a ...interface{}) {
 	defer logger.mutex.Unlock()
 	if logger.level > LevelError {
 		return
+	}
+	if logger.level < LevelTrace {
+		debug.PrintStack()
 	}
 	logger.Logger.Printf("[ERROR] "+format, a...)
 }
