@@ -34,13 +34,11 @@
 //     mkdocs configuration file
 //   2. $(cwd)/$(docs)/index.md
 //     provider documentation file
-//   3. $(cwd)/$(docs)/godoc.md
-//     Godoc documentation file
-//   4. $(cwd)/$(docs)/resources/*.md
+//   3. $(cwd)/$(docs)/resources/*.md
 //     All resource documentation. There will be one md file for each resource.
 //     The resource files will be named corresponding to its name in the
 //     provider's ResourcesMap.
-//   5. $(cwd)/$(docs)/datasources/*.md
+//   4. $(cwd)/$(docs)/datasources/*.md
 //     All datasource documentation. There will be one md file for each
 //     datasource.  The datasource files will be named corresponding to its
 //     name in the provider's DataSourcesMap.
@@ -53,8 +51,6 @@
 //     $(cwd)/mkdocs.yml => mkdocs configuration
 //   index.md.template
 //     $(cwd)/$(docs)/index.md => Provider documentation
-//   godoc.md.template
-//     $(cwd)/$(docs)/godoc.md => Container page for godoc
 //   resource.md.template
 //     $(cwd)/$(docs)/resources/*.md => Documentation for all resources
 //   datasource.md.template
@@ -128,20 +124,6 @@ func Document(provider *schema.Provider) []error {
 			},
 			provider: provider,
 			args:     args,
-		},
-	)
-
-	// generate godoc.md file
-	totalGoroutines += 1
-	go generateGodocMd(
-		goroutineBase{
-			outFile: filepath.Join(
-				args.docsDir,
-				"godoc.md",
-			),
-			template:     templates,
-			templateName: godocMdTemplate + args.templateFileExt,
-			errChan:      errChan,
 		},
 	)
 
@@ -236,7 +218,6 @@ DESCRIPTION
 
     * mkdocs.yml       => mkdocs configuration
     * docs/index.md    => Provider documentation
-    * docs/godoc.md    => Wrapper for godoc static files
     * resources/*.md   => documentation for each resource
     * datasources/*.md => documentation for each data source
 
@@ -245,7 +226,6 @@ DESCRIPTION
 
     * mkdocs.yml       => mkdocs.yml.template
     * docs/index.md    => index.md.template
-    * docs/godoc.md    => godoc.md.template
     * resources/*.md   => resource.md.template
     * datasources/*.md => datasource.md.template
 

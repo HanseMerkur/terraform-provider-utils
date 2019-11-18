@@ -19,8 +19,6 @@ import (
 const (
 	// Template file for mkdocs.yml
 	mkdocsYmlTemplate = "mkdocs.yml"
-	// Template file for godoc.md
-	godocMdTemplate = "godoc.md"
 	// Template file for all provider resources
 	resourceMdTemplate = "resource.md"
 	// Template file for all provider data sources
