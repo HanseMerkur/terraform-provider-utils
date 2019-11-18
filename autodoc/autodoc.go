@@ -65,7 +65,7 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/hashicorp/terraform/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 )
 
 // Exit status constants
