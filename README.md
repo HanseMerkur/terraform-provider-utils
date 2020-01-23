@@ -88,25 +88,9 @@ Repository documentation can be found in the `doc` directory. Follow the
 installation instructions on [`mkdocs`](https://www.mkdocs.org/#installation)
 to get started.
 
-The `Makefile` exposes a `godoc` target which can be used to generate and save
-the project's Godoc to the local filesystem in `docs/godoc`. These pages are
-used by `mkdocs` to generate the full project documentation. The `godoc` target
-only saves the necessary package documentation for this repository and does
-save the entire webroot.
-
 To generate and view the entire repository's documentation:
 
 ```
-$> make godoc
-Generating godoc to docs/godoc...
-Creating docs/godoc
-godoc PID: [5084]
-Sleeping while godoc initializes...
-Downloading pages...
-<...output truncated...>
-done.
-Killing godoc process [5084]
-
 $> mkdocs serve
 INFO    -  Building documentation...
 INFO    -  Cleaning site directory
@@ -117,10 +101,3 @@ INFO    -  Cleaning site directory
 
 The documentation can then be viewed by accessing localhost in your favorite
 browser or viewport.
-
-Cleaning up the generated `godoc` can be done with the `clean-godoc` target.
-
-```
-$> make clean-godoc
-Cleaning godoc files...
-```

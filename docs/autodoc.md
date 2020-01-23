@@ -32,7 +32,6 @@ The following files are generated. Assuming `/` is the project root and
 * `/mkdocs.yml` The `mkdocs` configuration file
 * `/docs/index.md` Documentation index. This is the "landing page" to your
     documentation.
-* `/docs/godoc.md` A container page for the project's `godoc`
 * `/docs/resources/*.md` A documentation file is generated for each resource.
     The file name will correspond to the name of the resource in the
     `Provider.Schema.ResourcesMap`.
@@ -47,7 +46,6 @@ to generate documentation. `autodoc` makes the following template associations
 to produce output:
 
 * `mkdocs.yml.template` => `mkdocs.yml`
-* `godoc.md.template` => `godoc.md`
 * `resource.md.template` => `docs/resources/*.md`
 * `datasource.md.template` => `docs/datasources/*.md`
 
@@ -306,7 +304,6 @@ Becomes:
 # autodoc files
 mkdocs.yml
 docs/*.md
-docs/godoc/**
 docs/resources/*.md
 docs/datasources/*.md
 ```

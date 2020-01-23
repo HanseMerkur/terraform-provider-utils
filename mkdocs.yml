@@ -20,7 +20,6 @@ site_author: Wayfair, LLC - SRE - Orchestration Pod
 
 pages:
   - Home: 'index.md'
-  - Godoc: 'godoc.md'
   - Autodoc: 'autodoc.md'
 
 # ------------------------------------------------------------------------------
@@ -31,15 +30,6 @@ theme:
   name: material
 docs_dir: docs
 site_dir: html
-#extra_css:
-#  - 'godoc/lib/godoc/jquery.treeview.css'
-#  - 'godoc/lib/godoc/style.css'
-#extra_javascript:
-#  - 'godoc/lib/godoc/godocs.js'
-#  - 'godoc/lib/godoc/jquery.js'
-#  - 'godoc/lib/godoc/jquery.treeview.edit.js'
-#  - 'godoc/lib/godoc/jquery.treeview.js'
-#extra_templates
 extra:
   repo_icon: github
 

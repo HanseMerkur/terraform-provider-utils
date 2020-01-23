@@ -122,44 +122,6 @@ func generateSchemaDoc(d schemaDoc) {
 	d.errChan <- templateErr
 }
 
-// generateGodocMd generates the wrapper documentation file that serves as a
-// viewport to the godoc.
-func generateGodocMd(d goroutineBase) {
-	// requested template should exist and be defined
-	if d.template.Lookup(d.templateName) == nil {
-		d.errChan <- fmt.Errorf(
-			"Cannot generate [%s]. Template [%s] "+
-				"does not exist or is not defined.",
-			d.outFile,
-			d.templateName,
-		)
-		return
-	}
-
-	// open output file
-	fd, fileErr := openFile(d)
-	defer fd.Close()
-	if fileErr != nil {
-		d.errChan <- fmt.Errorf(
-			"Cannot generate [%s]. Failed to get file descriptor. "+
-				"Error: [%s]",
-			d.outFile,
-			fileErr.Error(),
-		)
-		return
-	}
-
-	// Execute template with supplied data, dump output to our file descriptor
-	templateErr := d.template.ExecuteTemplate(
-		fd,
-		d.templateName,
-		nil,
-	)
-
-	// Signal error back to main goroutine
-	d.errChan <- templateErr
-}
-
 // generateMkdocsYml genreates the mkdocs.yml file which configures the
 // mkdocs build.
 func generateMkdocsYml(d mkdocsYmlDoc) {
