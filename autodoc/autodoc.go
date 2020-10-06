@@ -115,7 +115,6 @@ func Document(provider *schema.Provider) []error {
 		mkdocsYmlDoc{
 			goroutineBase: goroutineBase{
 				outFile: filepath.Join(
-					args.rootDir,
 					"mkdocs.yml",
 				),
 				template:     templates,
