@@ -38,7 +38,7 @@
 //     All resource documentation. There will be one md file for each resource.
 //     The resource files will be named corresponding to its name in the
 //     provider's ResourcesMap.
-//   4. $(cwd)/$(docs)/datasources/*.md
+//   4. $(cwd)/$(docs)/data-sources/*.md
 //     All datasource documentation. There will be one md file for each
 //     datasource.  The datasource files will be named corresponding to its
 //     name in the provider's DataSourcesMap.
@@ -54,7 +54,7 @@
 //   resource.md.template
 //     $(cwd)/$(docs)/resources/*.md => Documentation for all resources
 //   datasource.md.template
-//     $(cwd)/$(docs)/datasources/*.md => Documentation for all data sources
+//     $(cwd)/$(docs)/data-sources/*.md => Documentation for all data sources
 package autodoc
 
 import (
@@ -176,7 +176,7 @@ func Document(provider *schema.Provider) []error {
 				goroutineBase: goroutineBase{
 					outFile: filepath.Join(
 						args.docsDir,
-						"datasources",
+						"data-sources",
 						name+".md",
 					),
 					template:     templates,
@@ -219,7 +219,7 @@ DESCRIPTION
     * mkdocs.yml       => mkdocs configuration
     * docs/index.md    => Provider documentation
     * resources/*.md   => documentation for each resource
-    * datasources/*.md => documentation for each data source
+    * data-sources/*.md => documentation for each data source
 
   autodoc uses templates to generate the markdown files. autodoc makes
   the following template associations:
@@ -227,7 +227,7 @@ DESCRIPTION
     * mkdocs.yml       => mkdocs.yml.template
     * docs/index.md    => index.md.template
     * resources/*.md   => resource.md.template
-    * datasources/*.md => datasource.md.template
+    * data-sources/*.md => datasource.md.template
 
   Templates are written in golang stdlib template. See pkg/text/template
   for more information.

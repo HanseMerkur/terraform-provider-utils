@@ -35,7 +35,7 @@ The following files are generated. Assuming `/` is the project root and
 * `/docs/resources/*.md` A documentation file is generated for each resource.
     The file name will correspond to the name of the resource in the
     `Provider.Schema.ResourcesMap`.
-* `/docs/datasources/*.md` A documentation file is generated for each data
+* `/docs/data-sources/*.md` A documentation file is generated for each data
     source. The file name will correspond to the name of the data source in
     the `Provider.Schema.DataSourcesMap`.
 
@@ -47,7 +47,7 @@ to produce output:
 
 * `mkdocs.yml.template` => `mkdocs.yml`
 * `resource.md.template` => `docs/resources/*.md`
-* `datasource.md.template` => `docs/datasources/*.md`
+* `datasource.md.template` => `docs/data-sources/*.md`
 
 These 4 templates are required for the engine to function properly.
 
@@ -305,5 +305,5 @@ Becomes:
 mkdocs.yml
 docs/*.md
 docs/resources/*.md
-docs/datasources/*.md
+docs/data-sources/*.md
 ```
